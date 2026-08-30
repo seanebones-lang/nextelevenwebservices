@@ -289,6 +289,9 @@
 .payment-terms strong {
   @apply font-semibold text-ink;
 }
+.ownership-terms {
+  @apply border-t-0;
+}
 
 .contact-section {
   @apply bg-[#101010] text-white;

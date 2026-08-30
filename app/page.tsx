@@ -221,6 +221,20 @@ export default function Home() {
               <strong>30% completion</strong> after final acceptance
             </p>
           </div>
+          <div className="payment-terms ownership-terms">
+            <span>Ownership and hosting</span>
+            <p>
+              <strong>
+                After the final payment, the client owns the project source
+                code.
+              </strong>{' '}
+              Pay the hosting provider directly or have NextEleven manage it on
+              your behalf. Either way, the source can move to another suitable
+              provider at any time—no artificial lock-in. Provider charges are
+              separate from NextEleven service fees and approved before they are
+              incurred.
+            </p>
+          </div>
         </div>
       </section>
 
