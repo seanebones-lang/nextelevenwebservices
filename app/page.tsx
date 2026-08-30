@@ -40,6 +40,7 @@ const engagements = [
       'Define the opportunity before prescribing the build: audience, business model, customer journey, technical needs, risks, and the clearest path forward.',
     includes:
       'Research · Positioning · Requirements · Architecture · Build recommendation',
+    investment: '$2,500 fixed',
   },
   {
     number: 'B',
@@ -48,6 +49,7 @@ const engagements = [
       'Create the premium digital foundation the business can confidently grow from—distinctive, fast, maintainable, and built around its real customer journey.',
     includes:
       'Strategy · Messaging · Design system · Core build · Analytics · Launch',
+    investment: 'From $7,500',
   },
   {
     number: 'C',
@@ -56,6 +58,7 @@ const engagements = [
       'Build the complete custom environment around the business—from public presence and product sales to intelligent assistance and private operating workflows.',
     includes:
       'Commerce · Inventory · Virtual assistants · Email routing · Human handoff · Automation',
+    investment: 'From $20,000',
   },
 ];
 
@@ -189,7 +192,13 @@ export default function Home() {
               <span>02</span>
               <span>The engagement</span>
             </div>
-            <h2>Choose the depth the business requires.</h2>
+            <h2>Real numbers before the form.</h2>
+            <p>
+              You should not have to qualify for a sales call just to learn
+              whether the investment is workable. These are honest starting
+              points; discovery confirms the final scope before build work
+              begins.
+            </p>
           </div>
           <div className="engagement-list">
             {engagements.map((engagement) => (
@@ -197,9 +206,20 @@ export default function Home() {
                 <span>{engagement.number}</span>
                 <h3>{engagement.name}</h3>
                 <p>{engagement.description}</p>
-                <small>{engagement.includes}</small>
+                <small>
+                  <strong>{engagement.investment}</strong>
+                  {engagement.includes}
+                </small>
               </article>
             ))}
+          </div>
+          <div className="payment-terms">
+            <span>Standard build schedule</span>
+            <p>
+              <strong>30% deposit</strong> to reserve and begin ·{' '}
+              <strong>40% milestone</strong> after the agreed build checkpoint ·{' '}
+              <strong>30% completion</strong> after final acceptance
+            </p>
           </div>
         </div>
       </section>
@@ -211,11 +231,11 @@ export default function Home() {
               <span>03</span>
               <span>The conversation</span>
             </div>
-            <h2>What needs to change?</h2>
+            <h2>Tell us what needs to work.</h2>
             <p>
-              Give us the useful context. We’ll review the business, the current
-              presence, and what a successful result would need to accomplish
-              before responding.
+              The numbers are already above. This short form gives us enough
+              context to respond intelligently—not another hoop between you and
+              a price.
             </p>
             <div className="response-note">
               <span>11</span>

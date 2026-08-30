@@ -274,6 +274,21 @@
 .engagement-row small {
   @apply text-xs leading-6 text-ink/35 md:col-start-2 lg:col-start-auto;
 }
+.engagement-row small strong {
+  @apply mb-2 block font-mono text-sm font-semibold text-ink;
+}
+.payment-terms {
+  @apply grid gap-3 border-b border-ink/20 py-7 md:grid-cols-[0.75fr_2.25fr] md:items-baseline;
+}
+.payment-terms > span {
+  @apply font-mono text-[10px] uppercase tracking-[0.12em] text-ink/40;
+}
+.payment-terms p {
+  @apply text-sm leading-7 text-ink/60;
+}
+.payment-terms strong {
+  @apply font-semibold text-ink;
+}
 
 .contact-section {
   @apply bg-[#101010] text-white;
