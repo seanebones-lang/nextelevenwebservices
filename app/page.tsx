@@ -1,15 +1,5 @@
 import { ArrowDownRight, ArrowUpRight } from 'lucide-react';
 import { InquiryForm } from '@/components/inquiry-form';
-import {
-  MarkerArrow,
-  MarkerAsterisk,
-  MarkerBox,
-  MarkerCircle,
-  MarkerEleven,
-  MarkerScribble,
-  MarkerStar,
-  MarkerUnderline,
-} from '@/components/marker-drawings';
 
 const services = [
   {
@@ -51,7 +41,6 @@ const engagements = [
     includes:
       'Research · Positioning · Requirements · Architecture · Build recommendation',
     investment: 'From $500',
-    mark: 'box' as const,
   },
   {
     number: 'B',
@@ -61,7 +50,6 @@ const engagements = [
     includes:
       'Strategy · Messaging · Design system · Core build · Analytics · Launch',
     investment: 'From $2,500 · typically $2,500–$7,500',
-    mark: 'star' as const,
   },
   {
     number: 'C',
@@ -71,7 +59,6 @@ const engagements = [
     includes:
       'Commerce · Inventory · Virtual assistants · Email routing · Human handoff · Automation',
     investment: 'Custom scope · from $7,500',
-    mark: 'asterisk' as const,
   },
 ];
 
@@ -150,7 +137,6 @@ export default function Home() {
           href="#top"
           aria-label="NextEleven home"
         >
-          <MarkerEleven className="marker-ink size-8 shrink-0" />
           <span className="wordmark">
             NEXT
             <br />
@@ -183,10 +169,7 @@ export default function Home() {
         </div>
         <h1 className="editorial-title">
           <span>We build</span>
-          <span className="hero-presence">
-            presence
-            <MarkerUnderline className="marker-accent hero-underline" />
-          </span>
+          <span>presence</span>
           <span>that works.</span>
         </h1>
         <div className="hero-brief">
@@ -200,10 +183,8 @@ export default function Home() {
           </a>
         </div>
         <div className="hero-index" aria-hidden="true">
-          <MarkerCircle className="marker-accent hero-index-ring" />
-          <span>N°11</span>
+          N°11
         </div>
-        <MarkerScribble className="marker-ink hero-scribble" />
       </section>
 
       <section id="approach" className="site-shell editorial-statement">
@@ -216,12 +197,8 @@ export default function Home() {
             Start with what the business actually needs.
           </p>
           <p className="statement-main">
-            Discover the opportunity.{' '}
-            <span className="marked-phrase">
-              Establish the foundation.
-              <MarkerUnderline className="marker-accent phrase-underline" />
-            </span>{' '}
-            Build the full vertical when it earns the right to exist.
+            Discover the opportunity. Establish the foundation. Build the full
+            vertical when it earns the right to exist.
           </p>
           <p className="statement-note">
             We do not begin with a template or a predetermined stack. We learn
@@ -268,11 +245,11 @@ export default function Home() {
       >
         <div className="method-track">
           <span>Conceive</span>
-          <MarkerArrow className="marker-accent method-arrow" />
+          <i>→</i>
           <span>Create</span>
-          <MarkerArrow className="marker-accent method-arrow" />
+          <i>→</i>
           <span>Build</span>
-          <MarkerArrow className="marker-accent method-arrow" />
+          <i>→</i>
           <span>Operate</span>
         </div>
       </section>
@@ -295,16 +272,7 @@ export default function Home() {
           <div className="engagement-list">
             {engagements.map((engagement) => (
               <article key={engagement.name} className="engagement-row">
-                <span className="engagement-mark">
-                  {engagement.mark === 'star' ? (
-                    <MarkerStar className="marker-accent size-7" />
-                  ) : engagement.mark === 'asterisk' ? (
-                    <MarkerAsterisk className="marker-ink size-6" />
-                  ) : (
-                    <MarkerBox className="marker-ink size-7" />
-                  )}
-                  {engagement.number}
-                </span>
+                <span>{engagement.number}</span>
                 <h3>{engagement.name}</h3>
                 <p>{engagement.description}</p>
                 <small>
@@ -512,21 +480,14 @@ export default function Home() {
               <span>08</span>
               <span>The conversation</span>
             </div>
-            <h2>
-              Tell us what
-              <span className="contact-need">
-                needs
-                <MarkerUnderline className="marker-accent phrase-underline" />
-              </span>
-              to work.
-            </h2>
+            <h2>Tell us what needs to work.</h2>
             <p>
               The numbers are already above. This short form gives us enough
               context to respond intelligently—not another hoop between you and
               a price.
             </p>
             <div className="response-note">
-              <MarkerEleven className="marker-paper size-9" />
+              <span>11</span>
               <p>
                 Written reply within two business days.
                 <br />
@@ -539,13 +500,10 @@ export default function Home() {
       </section>
 
       <footer className="site-shell studio-footer">
-        <span className="wordmark-lockup">
-          <MarkerEleven className="marker-ink size-8" />
-          <span className="wordmark">
-            NEXT
-            <br />
-            ELEVEN
-          </span>
+        <span className="wordmark">
+          NEXT
+          <br />
+          ELEVEN
         </span>
         <p>
           NextEleven LLC · DFW, Texas ·{' '}
