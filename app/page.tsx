@@ -21,38 +21,41 @@ const services = [
     name: 'Build',
     statement: 'Engineer it to be fast, useful, and durable.',
     detail:
-      'Responsive development, accessible interactions, search foundations, analytics, forms, and launch preparation.',
+      'Custom commerce, virtual assistants, inventory-aware experiences, integrations, responsive engineering, analytics, and launch preparation.',
   },
   {
     number: '04',
     name: 'Operate',
-    statement: 'Keep it healthy after the applause.',
+    statement: 'Keep it useful after the launch.',
     detail:
-      'Managed hosting, monitoring, security, updates, content changes, and measured improvement over time.',
+      'Managed hosting, monitoring, customer communication, email routing, human handoff, updates, and measured improvement over time.',
   },
 ];
 
 const engagements = [
   {
     number: 'A',
-    name: 'Presence Blueprint',
+    name: 'Discovery',
     description:
-      'Clarify the audience, story, priorities, pages, and launch path before committing to a full build.',
-    includes: 'Discovery · Positioning · Content plan · Recommended scope',
+      'Define the opportunity before prescribing the build: audience, business model, customer journey, technical needs, risks, and the clearest path forward.',
+    includes:
+      'Research · Positioning · Requirements · Architecture · Build recommendation',
   },
   {
     number: 'B',
-    name: 'Presence Launch',
+    name: 'Solid Foundation',
     description:
-      'Turn the strategy into a polished, responsive, launch-ready presence built around the business.',
-    includes: 'Messaging · Design · Development · QA · Hosting · Launch',
+      'Create the premium digital foundation the business can confidently grow from—distinctive, fast, maintainable, and built around its real customer journey.',
+    includes:
+      'Strategy · Messaging · Design system · Core build · Analytics · Launch',
   },
   {
     number: 'C',
-    name: 'Presence Care',
+    name: 'Full Vertical Build',
     description:
-      'Protect the investment and keep the site useful with one partner responsible for its health.',
-    includes: 'Managed hosting · Monitoring · Updates · Content · Improvement',
+      'Build the complete custom environment around the business—from public presence and product sales to intelligent assistance and private operating workflows.',
+    includes:
+      'Commerce · Inventory · Virtual assistants · Email routing · Human handoff · Automation',
   },
 ];
 
@@ -89,8 +92,8 @@ export default function Home() {
 
       <section id="top" className="site-shell editorial-hero">
         <div className="hero-kicker">
-          <span>Independent creative engineering studio</span>
-          <span>Strategy → Operation</span>
+          <span>Premium web systems studio</span>
+          <span>Discovery → Full vertical</span>
         </div>
         <h1 className="editorial-title">
           <span>We build</span>
@@ -99,8 +102,9 @@ export default function Home() {
         </h1>
         <div className="hero-brief">
           <p>
-            NextEleven turns the real substance of an established business into
-            a clear, distinctive, professionally operated presence online.
+            NextEleven designs and engineers premium custom web
+            environments—from a solid public foundation to full vertical systems
+            that sell, assist, integrate, and operate.
           </p>
           <a href="#contact">
             Tell us what needs to change <ArrowDownRight />
@@ -118,14 +122,16 @@ export default function Home() {
         </div>
         <div>
           <p className="statement-lead">
-            Your business already has a reputation.
+            Start with what the business actually needs.
           </p>
           <p className="statement-main">
-            The web presence should carry the same weight as the work behind it.
+            Discover the opportunity. Establish the foundation. Build the full
+            vertical when it earns the right to exist.
           </p>
           <p className="statement-note">
-            We learn how the business earns trust, then connect the strategy,
-            words, design, technology, and care required to express it properly.
+            We do not begin with a template or a predetermined stack. We learn
+            the business, map the customer journey, define the operating
+            requirements, and engineer the right environment around them.
           </p>
         </div>
       </section>
@@ -138,14 +144,14 @@ export default function Home() {
               <span>The work</span>
             </div>
             <h2>
-              One relationship.
+              Cutting edge.
               <br />
-              Every layer.
+              Built on bedrock.
             </h2>
             <p>
-              No relay race between strategist, copywriter, designer, developer,
-              host, and support desk. One line of accountability from the first
-              question through daily operation.
+              Advanced capability only creates value when the fundamentals are
+              right. Strategy, experience, engineering, security, and operation
+              remain one connected responsibility.
             </p>
           </div>
           <div className="service-ledger">
@@ -183,7 +189,7 @@ export default function Home() {
               <span>02</span>
               <span>The engagement</span>
             </div>
-            <h2>Start where the business is.</h2>
+            <h2>Choose the depth the business requires.</h2>
           </div>
           <div className="engagement-list">
             {engagements.map((engagement) => (

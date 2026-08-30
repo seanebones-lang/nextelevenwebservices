@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   ),
   title: 'NextEleven — We Build Presence That Works',
   description:
-    'NextEleven conceives, creates, builds, hosts, and maintains complete web presences for established businesses.',
+    'NextEleven discovers, designs, and engineers premium web foundations and full vertical custom environments for established businesses.',
   openGraph: {
     title: 'We build presence that works.',
     description: 'Strategy through operation. One accountable partner.',

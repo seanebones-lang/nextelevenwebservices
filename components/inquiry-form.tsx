@@ -33,11 +33,12 @@ const options = {
     ['other', 'Something else'],
   ],
   projectType: [
-    ['new-presence', 'A complete new web presence'],
-    ['redesign', 'A redesign of an existing site'],
-    ['focused-launch', 'A focused landing page or launch'],
-    ['ongoing-care', 'Hosting, care, and improvements'],
-    ['not-sure', 'I need help defining it'],
+    ['discovery', 'Discovery and strategic definition'],
+    ['foundation', 'A premium web foundation'],
+    ['full-vertical', 'A full vertical custom build'],
+    ['commerce', 'A custom product-selling environment'],
+    ['virtual-assistant', 'A virtual assistant or intelligent workflow'],
+    ['not-sure', 'I need help choosing the right depth'],
   ],
   currentPresence: [
     ['none', 'No website yet'],
@@ -50,6 +51,10 @@ const options = {
     ['credibility', 'Build credibility and trust'],
     ['leads', 'Generate qualified inquiries'],
     ['bookings-sales', 'Increase bookings or sales'],
+    ['sell-products', 'Sell products in a custom environment'],
+    ['intelligent-assistance', 'Add intelligent customer assistance'],
+    ['inventory', 'Connect customer experience to inventory'],
+    ['operations', 'Route communication and operating workflows'],
     ['clarity', 'Explain the business more clearly'],
     ['modernize', 'Modernize an outdated presence'],
   ],
@@ -61,10 +66,10 @@ const options = {
   ],
   budget: [
     ['defining', 'I need help defining the investment'],
-    ['2500-5000', '$2,500–$5,000'],
     ['5000-10000', '$5,000–$10,000'],
-    ['10000-20000', '$10,000–$20,000'],
-    ['20000-plus', '$20,000+'],
+    ['10000-25000', '$10,000–$25,000'],
+    ['25000-50000', '$25,000–$50,000'],
+    ['50000-plus', '$50,000+'],
   ],
 } as const;
 
@@ -264,8 +269,8 @@ export function InquiryForm() {
       <div className="form-grid">
         {renderSelect(
           'projectType',
-          'What kind of help?',
-          'Choose a project type',
+          'What kind of engagement?',
+          'Choose the closest fit',
         )}
         {renderSelect(
           'currentPresence',
