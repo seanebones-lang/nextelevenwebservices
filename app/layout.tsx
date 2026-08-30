@@ -13,13 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nexteleven-web-presence.nexteleven.chatgpt.site'),
-  title: 'NextEleven — Complete Web Presence',
+  metadataBase: new URL(
+    'https://nexteleven-web-presence.nexteleven.chatgpt.site',
+  ),
+  title: 'NextEleven — Make Your Presence Impossible to Overlook',
   description:
     'NextEleven conceives, creates, builds, hosts, and maintains complete web presences for established businesses.',
   openGraph: {
-    title: 'Your business is established.',
-    description: 'Your web presence should make that obvious.',
+    title: 'Make your presence impossible to overlook.',
+    description: 'Strategy. Story. Design. Engineering. Care.',
     type: 'website',
     url: 'https://nexteleven-web-presence.nexteleven.chatgpt.site',
     images: [
@@ -27,14 +29,14 @@ export const metadata: Metadata = {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'Your business is established. Your web presence should make that obvious.',
+        alt: 'Make your presence impossible to overlook. Strategy. Story. Design. Engineering. Care.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Your business is established.',
-    description: 'Your web presence should make that obvious.',
+    title: 'Make your presence impossible to overlook.',
+    description: 'Strategy. Story. Design. Engineering. Care.',
     images: ['/og.png'],
   },
 };
