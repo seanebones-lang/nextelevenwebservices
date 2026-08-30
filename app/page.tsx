@@ -40,7 +40,7 @@ const engagements = [
       'Define the opportunity before prescribing the build: audience, business model, customer journey, technical needs, risks, and the clearest path forward.',
     includes:
       'Research · Positioning · Requirements · Architecture · Build recommendation',
-    investment: '$2,500 fixed',
+    investment: 'From $500',
   },
   {
     number: 'B',
@@ -49,7 +49,7 @@ const engagements = [
       'Create the premium digital foundation the business can confidently grow from—distinctive, fast, maintainable, and built around its real customer journey.',
     includes:
       'Strategy · Messaging · Design system · Core build · Analytics · Launch',
-    investment: 'From $7,500',
+    investment: 'From $2,500 · typically $2,500–$7,500',
   },
   {
     number: 'C',
@@ -58,7 +58,7 @@ const engagements = [
       'Build the complete custom environment around the business—from public presence and product sales to intelligent assistance and private operating workflows.',
     includes:
       'Commerce · Inventory · Virtual assistants · Email routing · Human handoff · Automation',
-    investment: 'From $20,000',
+    investment: 'Custom scope · from $7,500',
   },
 ];
 
