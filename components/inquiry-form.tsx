@@ -98,7 +98,10 @@ type SelectName =
   | 'budget';
 
 export function InquiryForm() {
-  const [result, setResult] = useState<{ reference: string } | null>(null);
+  const [result, setResult] = useState<{
+    reference: string;
+    replyBy: string;
+  } | null>(null);
   const [serverError, setServerError] = useState('');
   const {
     control,
@@ -127,7 +130,22 @@ export function InquiryForm() {
       if (!response.ok || !body.ok) {
         throw new Error(body.message || 'We could not save your inquiry.');
       }
-      setResult({ reference: body.reference || 'RECEIVED' });
+      const replyDate = new Date();
+      let businessDays = 0;
+      while (businessDays < 2) {
+        replyDate.setDate(replyDate.getDate() + 1);
+        if (replyDate.getDay() !== 0 && replyDate.getDay() !== 6) {
+          businessDays += 1;
+        }
+      }
+      setResult({
+        reference: body.reference || 'RECEIVED',
+        replyBy: new Intl.DateTimeFormat('en-US', {
+          weekday: 'long',
+          month: 'long',
+          day: 'numeric',
+        }).format(replyDate),
+      });
       reset(defaults);
     } catch (error) {
       setServerError(
@@ -182,7 +200,7 @@ export function InquiryForm() {
         <h3>Thank you. We have a useful place to begin.</h3>
         <p>
           We’ll review the business, the existing presence, and what you want to
-          change before responding.
+          change. You’ll receive a written reply by {result.replyBy}.
         </p>
         <Button
           variant="outline"

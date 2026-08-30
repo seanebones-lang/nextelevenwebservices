@@ -74,6 +74,40 @@ export async function POST(request: Request) {
       )
       .run();
 
+    const notificationUrl = (env as unknown as Record<string, unknown>)
+      .INQUIRY_NOTIFICATION_WEBHOOK_URL;
+
+    if (typeof notificationUrl === 'string' && notificationUrl.length > 0) {
+      try {
+        const notification = await fetch(notificationUrl, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            event: 'inquiry.created',
+            reference: id.slice(0, 8).toUpperCase(),
+            createdAt: new Date().toISOString(),
+            inquiry: {
+              name: inquiry.name,
+              email: inquiry.email,
+              businessName: inquiry.businessName,
+              website: inquiry.website || null,
+              industry: inquiry.industry,
+              projectType: inquiry.projectType,
+              primaryGoal: inquiry.primaryGoal,
+              timeline: inquiry.timeline,
+              budget: inquiry.budget,
+              details: inquiry.details,
+            },
+          }),
+        });
+        if (!notification.ok) {
+          console.error('Inquiry notification was not accepted');
+        }
+      } catch {
+        console.error('Inquiry notification could not be delivered');
+      }
+    }
+
     return Response.json(
       { ok: true, reference: id.slice(0, 8).toUpperCase() },
       { status: 201 },

@@ -356,6 +356,133 @@
   @apply border-t-0;
 }
 
+.definition-section {
+  @apply border-b border-ink/20 bg-[#111111];
+}
+.definition-section .site-shell,
+.terms-section .site-shell {
+  @apply py-24 lg:py-36;
+}
+.definition-intro,
+.terms-intro {
+  @apply border-b border-ink/20;
+}
+.package-details {
+  @apply grid border-b border-ink/20 lg:grid-cols-3;
+}
+.package-card {
+  @apply py-10 lg:px-8 lg:first:pl-0 lg:last:pr-0 lg:not-last:border-r lg:not-last:border-ink/20;
+}
+.package-card header {
+  @apply flex gap-6 border-b border-ink/20 pb-7;
+}
+.package-card header > span {
+  @apply pt-1 font-mono text-[10px] text-ink/40;
+}
+.package-card h3 {
+  @apply text-3xl font-semibold tracking-[-0.05em];
+}
+.package-card header strong {
+  @apply mt-2 block font-mono text-xs font-medium text-ink/55;
+}
+.package-card dl > div {
+  @apply border-b border-ink/15 py-6 last:border-0;
+}
+.package-card dt {
+  @apply mb-2 font-mono text-[10px] uppercase tracking-[0.1em] text-ink/35;
+}
+.package-card dd {
+  @apply text-sm leading-6 text-ink/65;
+}
+.launch-standard {
+  @apply grid gap-5 pt-8 md:grid-cols-[0.75fr_2.25fr];
+}
+.launch-standard span {
+  @apply font-mono text-[10px] uppercase tracking-[0.1em] text-ink/40;
+}
+.launch-standard p {
+  @apply max-w-4xl text-sm leading-7 text-ink/60;
+}
+
+.operate-section {
+  @apply border-b border-black/20 bg-white text-black;
+}
+.operate-layout {
+  @apply grid gap-12 py-24 lg:grid-cols-[0.35fr_1.65fr] lg:py-36;
+}
+.operate-kicker {
+  @apply font-mono text-xs uppercase tracking-[0.1em] text-black/45;
+}
+.operate-layout h2 {
+  @apply mt-7 max-w-[15ch] text-[clamp(3.2rem,6vw,7rem)] font-semibold leading-[0.9] tracking-[-0.07em];
+}
+.operate-layout div:last-child > p:not(.operate-kicker) {
+  @apply mt-10 max-w-3xl text-lg leading-8 text-black/65;
+}
+.operate-layout small {
+  @apply mt-8 block max-w-3xl border-t border-black/20 pt-6 text-sm leading-6 text-black/45;
+}
+
+.fit-section,
+.counterparty-section {
+  @apply border-b border-ink/20;
+}
+.fit-grid,
+.counterparty-grid {
+  @apply grid gap-14 py-24 lg:grid-cols-[0.9fr_1.1fr] lg:py-36;
+}
+.fit-grid h2 {
+  @apply mt-12 max-w-[14ch] text-[clamp(3rem,5vw,6rem)] font-semibold leading-[0.92] tracking-[-0.065em];
+}
+.fit-copy {
+  @apply space-y-7 self-end;
+}
+.fit-copy > p {
+  @apply max-w-2xl text-lg leading-8 text-ink/65;
+}
+.proof-note {
+  @apply mt-10 grid gap-3 border-t border-ink/20 pt-7;
+}
+.proof-note strong {
+  @apply text-base font-semibold;
+}
+.proof-note span {
+  @apply max-w-2xl text-sm leading-6 text-ink/45;
+}
+
+.terms-section {
+  @apply border-b border-ink/20 bg-[#1a1a1a];
+}
+.terms-grid {
+  @apply grid border-t border-ink/20 sm:grid-cols-2 lg:grid-cols-3;
+}
+.terms-grid article {
+  @apply border-b border-ink/20 py-8 sm:px-7 sm:odd:border-r lg:border-r;
+}
+.terms-grid article:nth-child(3n) {
+  @apply lg:border-r-0;
+}
+.terms-grid h3 {
+  @apply text-xl font-semibold tracking-[-0.035em];
+}
+.terms-grid p {
+  @apply mt-4 text-sm leading-6 text-ink/55;
+}
+
+.counterparty-grid {
+  @apply lg:grid-cols-[0.35fr_1.65fr];
+}
+.counterparty-grid h2 {
+  @apply text-[clamp(3.5rem,7vw,8rem)] font-semibold leading-none tracking-[-0.075em];
+}
+.counterparty-grid p {
+  @apply mt-7 max-w-3xl text-lg leading-8 text-ink/60;
+}
+.counterparty-grid a,
+.studio-footer p a {
+  @apply border-b border-ink/35 text-ink transition-colors hover:border-ink;
+}
+
 .contact-section {
   @apply bg-[#101010] text-white;
 }

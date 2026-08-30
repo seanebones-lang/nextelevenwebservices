@@ -75,6 +75,72 @@ const engagements = [
   },
 ];
 
+const packageDetails = [
+  {
+    number: 'A',
+    name: 'Discovery',
+    price: 'From $500',
+    timing: '5–10 business days after kickoff',
+    deliverable:
+      'A written scope memo with audience and journey findings, recommended sitemap, technical requirements, build recommendation, and an estimate for Foundation or Full Vertical.',
+    clientInputs:
+      'Your current site, relevant competitors, available brand assets, business priorities, and the person who handles customer inquiries.',
+    boundaries:
+      'This is paid decision-making work—not a free sales call and not a finished website. The Discovery fee is credited to a Foundation or Full Vertical build started within 30 days.',
+  },
+  {
+    number: 'B',
+    name: 'Solid Foundation',
+    price: 'Typically $2,500–$7,500',
+    timing: 'Usually 3–6 weeks from cleared deposit to launch',
+    deliverable:
+      'A custom, responsive presence of approximately 5–12 core pages with strategy, information architecture, a design system, edited or newly written copy as scoped, mobile QA, analytics, basic technical SEO, and a tested inquiry path.',
+    clientInputs:
+      'Timely access to brand materials, factual business information, existing accounts, and one decision-maker for checkpoint approvals.',
+    boundaries:
+      'Two consolidated design/content revision rounds are included. A simple editor may be included when useful; otherwise NextEleven handles changes. Custom commerce, inventory sync, virtual assistants, and multi-location operations are scoped as Full Vertical work.',
+  },
+  {
+    number: 'C',
+    name: 'Full Vertical Build',
+    price: 'Custom scope · from $7,500',
+    timing: 'Discovery or a paid scoping week comes first',
+    deliverable:
+      'A purpose-built operating environment assembled from the modules the business actually needs. For example: a shop site, product catalog, booking flow, after-hours assistant, inventory connection, and inbox routing with human handoff.',
+    clientInputs:
+      'Access to the systems being connected, operating rules, product or service data, escalation owners, and a decision-maker empowered to approve workflows.',
+    boundaries:
+      'Commerce, inventory, assistants, email routing, human handoff, and automation are common modules—not assumed inclusions. Scope, integrations, acceptance criteria, runtime, and calendar are defined in writing before the build begins.',
+  },
+];
+
+const terms = [
+  {
+    title: 'Payment and start',
+    body: 'NextEleven invoices by card or ACH. The project calendar begins when the deposit clears and required kickoff material is available. Applicable taxes, if any, are itemized rather than hidden in the fee.',
+  },
+  {
+    title: 'Scope changes',
+    body: 'Work outside the accepted scope is described and priced in a written change order before it begins. No surprise work and no surprise invoice.',
+  },
+  {
+    title: 'If a project stops',
+    body: 'The deposit reserves capacity and covers work begun. If the client cancels, completed work and committed third-party costs are reconciled through the stop date; no unperformed milestone is silently charged.',
+  },
+  {
+    title: 'Files and accounts',
+    body: 'After final payment, the client owns the project source code and final project-specific design files. The client owns the domain, analytics, email, commerce, and cloud accounts; NextEleven receives only the access needed to do the work.',
+  },
+  {
+    title: 'Hosting and portability',
+    body: 'The client may pay providers directly or ask NextEleven to manage them. Provider charges remain separate and pre-approved. The source and client-owned accounts can move to another suitable provider at any time.',
+  },
+  {
+    title: 'DFW and remote work',
+    body: 'Remote delivery is standard. On-site work in DFW or travel elsewhere is included only when written into the scope; otherwise travel is quoted separately before it is booked.',
+  },
+];
+
 export default function Home() {
   return (
     <main>
@@ -100,6 +166,9 @@ export default function Home() {
           </a>
           <a className="nav-link" href="#services">
             Services
+          </a>
+          <a className="nav-link" href="#details">
+            What you get
           </a>
         </nav>
         <a href="#contact" className="header-contact">
@@ -270,11 +339,177 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="details" className="definition-section">
+        <div className="site-shell">
+          <div className="section-intro compact definition-intro">
+            <div className="section-marker">
+              <span>03</span>
+              <span>Definition of done</span>
+            </div>
+            <h2>Know what the engagement produces.</h2>
+            <p>
+              Every engagement has a written deliverable, a working calendar,
+              clear client inputs, and an explicit boundary. The accepted
+              proposal is the final source of truth for scope.
+            </p>
+          </div>
+          <div className="package-details">
+            {packageDetails.map((item) => (
+              <article key={item.name} className="package-card">
+                <header>
+                  <span>{item.number}</span>
+                  <div>
+                    <h3>{item.name}</h3>
+                    <strong>{item.price}</strong>
+                  </div>
+                </header>
+                <dl>
+                  <div>
+                    <dt>Typical calendar</dt>
+                    <dd>{item.timing}</dd>
+                  </div>
+                  <div>
+                    <dt>What you receive</dt>
+                    <dd>{item.deliverable}</dd>
+                  </div>
+                  <div>
+                    <dt>What we need from you</dt>
+                    <dd>{item.clientInputs}</dd>
+                  </div>
+                  <div>
+                    <dt>Boundaries</dt>
+                    <dd>{item.boundaries}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+          <div className="launch-standard">
+            <span>Foundation launch standard</span>
+            <p>
+              Before launch: domain and DNS are prepared, redirects are mapped
+              when relevant, forms are tested, analytics is live, mobile and
+              accessibility checks are completed, and the approved production
+              route is verified. Foundation and Full Vertical builds include 30
+              days of post-launch defect support.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="operate-section">
+        <div className="site-shell operate-layout">
+          <div className="section-marker">
+            <span>04</span>
+            <span>After launch</span>
+          </div>
+          <div>
+            <p className="operate-kicker">Operate · from $150/month</p>
+            <h2>Keep one accountable partner.</h2>
+            <p>
+              After the included 30-day launch window, ongoing care is optional.
+              A standard retainer can cover managed releases, uptime and form
+              monitoring, routine dependency updates, small content changes, and
+              a monthly health check. Higher-touch support, workflow operation,
+              or continuous improvement is scoped around the actual system.
+            </p>
+            <small>
+              Hosting and third-party provider bills remain separate. The client
+              keeps the keys and can end managed service under the agreed notice
+              period without surrendering the work.
+            </small>
+          </div>
+        </div>
+      </section>
+
+      <section className="fit-section">
+        <div className="site-shell fit-grid">
+          <div>
+            <div className="section-marker">
+              <span>05</span>
+              <span>Fit</span>
+            </div>
+            <h2>Built for businesses with real work behind them.</h2>
+          </div>
+          <div className="fit-copy">
+            <p>
+              NextEleven is a strong fit for automotive and skilled trades,
+              professional services, industrial and B2B companies, retail and
+              hospitality, and health or wellness businesses that need a clearer
+              public presence or a connected operating environment.
+            </p>
+            <p>
+              We are not the right shop for a template reskin, a standalone $300
+              logo, or a request to “just make it pretty” without addressing the
+              business problem.
+            </p>
+            <div className="proof-note">
+              <strong>Proof should match the problem.</strong>
+              <span>
+                Relevant client work is shared privately when permission and fit
+                allow. We do not substitute unrelated mobile-app credentials for
+                web-presence proof or publish a client result without consent.
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="terms-section">
+        <div className="site-shell">
+          <div className="section-intro compact terms-intro">
+            <div className="section-marker">
+              <span>06</span>
+              <span>Working terms</span>
+            </div>
+            <h2>No surprises in the handoff.</h2>
+            <p>
+              These are the standard commercial principles. The signed proposal
+              records the exact scope, acceptance points, support period, and
+              any project-specific exceptions.
+            </p>
+          </div>
+          <div className="terms-grid">
+            {terms.map((term) => (
+              <article key={term.title}>
+                <h3>{term.title}</h3>
+                <p>{term.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="counterparty-section">
+        <div className="site-shell counterparty-grid">
+          <div className="section-marker">
+            <span>07</span>
+            <span>Who you hire</span>
+          </div>
+          <div>
+            <h2>NextEleven LLC</h2>
+            <p>
+              DFW, Texas · You work directly with Sean, the principal
+              responsible for discovery, design direction, engineering, and
+              delivery.
+            </p>
+            <p>
+              Written reply within two business days. Prefer email? Reach
+              NextEleven at{' '}
+              <a href="mailto:nextelevenstudios@gmail.com">
+                nextelevenstudios@gmail.com
+              </a>
+              .
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="contact-section">
         <div className="site-shell contact-layout">
           <div className="contact-intro">
             <div className="section-marker">
-              <span>03</span>
+              <span>08</span>
               <span>The conversation</span>
             </div>
             <h2>
@@ -293,7 +528,7 @@ export default function Home() {
             <div className="response-note">
               <MarkerEleven className="marker-paper size-9" />
               <p>
-                Thoughtful response from NextEleven.
+                Written reply within two business days.
                 <br />
                 No generic sales script.
               </p>
@@ -312,7 +547,12 @@ export default function Home() {
             ELEVEN
           </span>
         </span>
-        <p>Complete web presence for established businesses.</p>
+        <p>
+          NextEleven LLC · DFW, Texas ·{' '}
+          <a href="mailto:nextelevenstudios@gmail.com">
+            nextelevenstudios@gmail.com
+          </a>
+        </p>
         <a href="#top">Back to top ↑</a>
       </footer>
     </main>
