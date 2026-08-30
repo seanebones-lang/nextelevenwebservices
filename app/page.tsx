@@ -282,6 +282,10 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <a className="mobile-inline-cta" href="#contact">
+            <span>Discovery from $500</span>
+            <strong>Start a project →</strong>
+          </a>
           <div className="payment-terms">
             <span>Standard build schedule</span>
             <p>
@@ -321,7 +325,7 @@ export default function Home() {
               proposal is the final source of truth for scope.
             </p>
           </div>
-          <div className="package-details">
+          <div className="package-details package-details-desktop">
             {packageDetails.map((item) => (
               <article key={item.name} className="package-card">
                 <header>
@@ -352,6 +356,38 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <div className="package-details-mobile">
+            {packageDetails.map((item) => (
+              <details key={item.name} className="package-disclosure">
+                <summary>
+                  <span>{item.number}</span>
+                  <span>
+                    <strong>{item.name}</strong>
+                    <small>{item.price}</small>
+                  </span>
+                  <i aria-hidden="true">+</i>
+                </summary>
+                <dl>
+                  <div>
+                    <dt>Typical calendar</dt>
+                    <dd>{item.timing}</dd>
+                  </div>
+                  <div>
+                    <dt>What you receive</dt>
+                    <dd>{item.deliverable}</dd>
+                  </div>
+                  <div>
+                    <dt>What we need from you</dt>
+                    <dd>{item.clientInputs}</dd>
+                  </div>
+                  <div>
+                    <dt>Boundaries</dt>
+                    <dd>{item.boundaries}</dd>
+                  </div>
+                </dl>
+              </details>
+            ))}
+          </div>
           <div className="launch-standard">
             <span>Foundation launch standard</span>
             <p>
@@ -362,6 +398,10 @@ export default function Home() {
               days of post-launch defect support.
             </p>
           </div>
+          <a className="mobile-inline-cta definition-cta" href="#contact">
+            <span>Know the right starting point?</span>
+            <strong>Send the brief →</strong>
+          </a>
         </div>
       </section>
 
@@ -437,12 +477,23 @@ export default function Home() {
               any project-specific exceptions.
             </p>
           </div>
-          <div className="terms-grid">
+          <div className="terms-grid terms-grid-desktop">
             {terms.map((term) => (
               <article key={term.title}>
                 <h3>{term.title}</h3>
                 <p>{term.body}</p>
               </article>
+            ))}
+          </div>
+          <div className="terms-mobile">
+            {terms.map((term) => (
+              <details key={term.title}>
+                <summary>
+                  <strong>{term.title}</strong>
+                  <i aria-hidden="true">+</i>
+                </summary>
+                <p>{term.body}</p>
+              </details>
             ))}
           </div>
         </div>
