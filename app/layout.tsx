@@ -16,12 +16,12 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     'https://nexteleven-web-presence.nexteleven.chatgpt.site',
   ),
-  title: 'NextEleven — Make Your Presence Impossible to Overlook',
+  title: 'NextEleven — We Build Presence That Works',
   description:
     'NextEleven conceives, creates, builds, hosts, and maintains complete web presences for established businesses.',
   openGraph: {
-    title: 'Make your presence impossible to overlook.',
-    description: 'Strategy. Story. Design. Engineering. Care.',
+    title: 'We build presence that works.',
+    description: 'Strategy through operation. One accountable partner.',
     type: 'website',
     url: 'https://nexteleven-web-presence.nexteleven.chatgpt.site',
     images: [
@@ -29,14 +29,14 @@ export const metadata: Metadata = {
         url: '/og.png',
         width: 1200,
         height: 630,
-        alt: 'Make your presence impossible to overlook. Strategy. Story. Design. Engineering. Care.',
+        alt: 'We build presence that works. Strategy through operation. One accountable partner.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Make your presence impossible to overlook.',
-    description: 'Strategy. Story. Design. Engineering. Care.',
+    title: 'We build presence that works.',
+    description: 'Strategy through operation. One accountable partner.',
     images: ['/og.png'],
   },
 };

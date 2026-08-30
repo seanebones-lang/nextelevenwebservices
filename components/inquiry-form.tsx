@@ -170,7 +170,7 @@ export function InquiryForm() {
     return (
       <output className="form-success" aria-live="polite">
         <CheckCircle2 />
-        <p className="eyebrow !text-lime">
+        <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-white/55">
           Inquiry received / {result.reference}
         </p>
         <h3>Thank you. We have a useful place to begin.</h3>
@@ -316,7 +316,7 @@ export function InquiryForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="h-14 rounded-full bg-lime px-7 text-base text-paper hover:bg-lime/85"
+          className="h-14 rounded-full bg-white px-7 text-base text-black hover:bg-white/80"
         >
           {isSubmitting ? (
             <>
