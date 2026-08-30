@@ -100,7 +100,8 @@ type SelectName =
 export function InquiryForm() {
   const [result, setResult] = useState<{
     reference: string;
-    replyBy: string;
+    replyBy?: string;
+    deliveryPending: boolean;
   } | null>(null);
   const [serverError, setServerError] = useState('');
   const {
@@ -126,6 +127,7 @@ export function InquiryForm() {
         ok: boolean;
         reference?: string;
         message?: string;
+        deliveryPending?: boolean;
       };
       if (!response.ok || !body.ok) {
         throw new Error(body.message || 'We could not save your inquiry.');
@@ -140,11 +142,14 @@ export function InquiryForm() {
       }
       setResult({
         reference: body.reference || 'RECEIVED',
-        replyBy: new Intl.DateTimeFormat('en-US', {
-          weekday: 'long',
-          month: 'long',
-          day: 'numeric',
-        }).format(replyDate),
+        deliveryPending: Boolean(body.deliveryPending),
+        replyBy: body.deliveryPending
+          ? undefined
+          : new Intl.DateTimeFormat('en-US', {
+              weekday: 'long',
+              month: 'long',
+              day: 'numeric',
+            }).format(replyDate),
       });
       reset(defaults);
     } catch (error) {
@@ -197,11 +202,26 @@ export function InquiryForm() {
         <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-white/55">
           Inquiry received / {result.reference}
         </p>
-        <h3>Thank you. We have a useful place to begin.</h3>
-        <p>
-          We’ll review the business, the existing presence, and what you want to
-          change. You’ll receive a written reply by {result.replyBy}.
-        </p>
+        <h3>
+          {result.deliveryPending
+            ? 'Your brief is saved.'
+            : 'Thank you. We have a useful place to begin.'}
+        </h3>
+        {result.deliveryPending ? (
+          <p>
+            Delivery to our inbox is still pending. Please email your reference
+            to{' '}
+            <a href="mailto:nextelevenstudios@gmail.com">
+              nextelevenstudios@gmail.com
+            </a>{' '}
+            so we can confirm receipt.
+          </p>
+        ) : (
+          <p>
+            We’ll review the business, the existing presence, and what you want
+            to change. You’ll receive a written reply by {result.replyBy}.
+          </p>
+        )}
         <Button
           variant="outline"
           onClick={() => setResult(null)}

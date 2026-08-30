@@ -10,6 +10,8 @@
     "build": "vinext build",
     "start": "wrangler dev --config dist/server/wrangler.json",
     "lint": "oxlint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --experimental-strip-types --test test/*.test.mjs",
     "format": "oxfmt",
     "db:generate": "drizzle-kit generate"
   },

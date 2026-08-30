@@ -458,49 +458,6 @@
 }
 
 @media (max-width: 767px) {
-  main {
-    display: flex;
-    flex-direction: column;
-  }
-  .studio-header {
-    order: 0;
-  }
-  .editorial-hero {
-    order: 1;
-  }
-  .editorial-statement {
-    order: 2;
-  }
-  .service-section {
-    order: 3;
-  }
-  .method-strip {
-    order: 4;
-  }
-  .engagement-section {
-    order: 5;
-  }
-  .definition-section {
-    order: 6;
-  }
-  .counterparty-section {
-    order: 7;
-  }
-  .contact-section {
-    order: 8;
-  }
-  .operate-section {
-    order: 9;
-  }
-  .fit-section {
-    order: 10;
-  }
-  .terms-section {
-    order: 11;
-  }
-  .studio-footer {
-    order: 12;
-  }
   .studio-header {
     height: 5rem;
   }

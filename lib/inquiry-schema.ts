@@ -20,7 +20,9 @@ export const inquirySchema = z.object({
     .trim()
     .min(20, 'A little more context will help us prepare.')
     .max(2000),
-  companyWebsite: z.string().max(0),
+  // Transport-level honeypot. The route quietly discards populated values;
+  // accepting the value here keeps that behavior indistinguishable to bots.
+  companyWebsite: z.string().max(240),
 });
 
 export type InquiryInput = z.infer<typeof inquirySchema>;
