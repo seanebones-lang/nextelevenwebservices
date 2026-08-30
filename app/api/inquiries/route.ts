@@ -1,9 +1,25 @@
-import { env } from 'cloudflare:workers';
 import { inquirySchema, type InquiryInput } from '@/lib/inquiry-schema';
 
 const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
 const RATE_LIMIT_MAX_REQUESTS = 5;
 const NOTIFICATION_ATTEMPTS = 3;
+
+type InquiryRuntime = {
+  DB?: D1Database;
+  INQUIRY_NOTIFICATION_WEBHOOK_URL?: string;
+};
+
+async function inquiryRuntime(): Promise<InquiryRuntime> {
+  if (process.env.VERCEL) {
+    return {
+      INQUIRY_NOTIFICATION_WEBHOOK_URL:
+        process.env.INQUIRY_NOTIFICATION_WEBHOOK_URL,
+    };
+  }
+
+  const workerRuntime = await import('cloudflare:workers');
+  return workerRuntime.env;
+}
 
 function clientAddress(request: Request) {
   return (
@@ -129,9 +145,17 @@ export async function POST(request: Request) {
   }
 
   try {
-    const db = env.DB;
+    const runtime = await inquiryRuntime();
+    const db = runtime.DB;
     if (!db) {
-      throw new Error('Inquiry database is unavailable.');
+      return Response.json(
+        {
+          ok: false,
+          message:
+            'Online inquiry delivery is not configured on this host. Please email nextelevenstudios@gmail.com.',
+        },
+        { status: 503 },
+      );
     }
 
     const now = Date.now();
@@ -177,7 +201,7 @@ export async function POST(request: Request) {
       )
       .run();
 
-    const notificationUrl = env.INQUIRY_NOTIFICATION_WEBHOOK_URL;
+    const notificationUrl = runtime.INQUIRY_NOTIFICATION_WEBHOOK_URL;
     const delivery = notificationUrl
       ? await deliverNotification(notificationUrl, id, createdAt, inquiry)
       : {
