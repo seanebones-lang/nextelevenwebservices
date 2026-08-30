@@ -359,7 +359,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-ink text-white">
+      <section id="contact" className="bg-paper text-white">
         <div className="site-shell grid gap-12 py-16 lg:grid-cols-[0.72fr_1.28fr] lg:py-28">
           <div className="lg:sticky lg:top-10 lg:self-start">
             <p className="eyebrow mb-7 !text-white/50">
@@ -373,7 +373,7 @@ export default function Home() {
               conversation. No generic sales script. No obligation.
             </p>
             <div className="mt-10 flex items-center gap-4 text-sm text-white/55">
-              <span className="grid size-10 place-items-center rounded-full bg-lime font-mono text-xs font-bold text-ink">
+              <span className="grid size-10 place-items-center rounded-full bg-lime font-mono text-xs font-bold text-paper">
                 11
               </span>
               <span>Thoughtful response from NextEleven</span>

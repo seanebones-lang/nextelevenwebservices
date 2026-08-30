@@ -302,7 +302,7 @@ export function InquiryForm() {
 
       {serverError && (
         <p
-          className="rounded-xl bg-red-500/15 p-4 text-sm text-red-200"
+          className="rounded-xl bg-white/10 p-4 text-sm text-white/70"
           role="alert"
         >
           {serverError}
@@ -316,7 +316,7 @@ export function InquiryForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="h-14 rounded-full bg-lime px-7 text-base text-ink hover:bg-lime/85"
+          className="h-14 rounded-full bg-lime px-7 text-base text-paper hover:bg-lime/85"
         >
           {isSubmitting ? (
             <>
