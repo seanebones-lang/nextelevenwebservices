@@ -25,6 +25,7 @@
   --color-destructive: var(--destructive);
   --color-ink: var(--ink);
   --color-paper: var(--paper);
+  --color-marker: var(--marker);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --radius-sm: calc(var(--radius) * 0.6);
@@ -37,6 +38,7 @@
 :root {
   --paper: #070707;
   --ink: #f4f4f4;
+  --marker: #e8b43a;
   --background: var(--paper);
   --foreground: var(--ink);
   --card: #111111;
@@ -107,6 +109,9 @@
   .wordmark {
     @apply font-mono text-[11px] font-bold leading-[0.85] tracking-[-0.06em];
   }
+  .wordmark-lockup {
+    @apply flex items-center gap-3;
+  }
   .header-contact {
     @apply flex items-center gap-2 border-b border-ink/40 pb-1 text-sm transition-colors hover:border-ink;
   }
@@ -118,6 +123,64 @@
   }
   .section-marker span:first-child {
     @apply opacity-40;
+  }
+
+  .marker-ink {
+    color: var(--ink);
+  }
+  .marker-accent {
+    color: var(--marker);
+  }
+  .marker-paper {
+    color: var(--paper);
+    background: #fff;
+    border-radius: 999px;
+    padding: 0.35rem;
+  }
+  .hero-presence,
+  .marked-phrase,
+  .contact-need {
+    position: relative;
+    display: inline-block;
+  }
+  .hero-underline {
+    position: absolute;
+    left: -2%;
+    bottom: -0.08em;
+    width: 104%;
+    height: 0.22em;
+    pointer-events: none;
+  }
+  .phrase-underline {
+    position: absolute;
+    left: -1%;
+    bottom: -0.12em;
+    width: 102%;
+    height: 0.28em;
+    pointer-events: none;
+  }
+  .hero-scribble {
+    position: absolute;
+    left: 4%;
+    bottom: 7%;
+    width: min(220px, 28vw);
+    opacity: 0.28;
+    pointer-events: none;
+  }
+  .hero-index-ring {
+    position: absolute;
+    inset: -1.15rem -0.85rem auto auto;
+    width: 4.6rem;
+    height: 4.6rem;
+    opacity: 0.9;
+  }
+  .method-arrow {
+    width: 3.25rem;
+    height: 1.35rem;
+    flex-shrink: 0;
+  }
+  .engagement-mark {
+    @apply flex items-center gap-3 font-mono text-[10px] text-ink/40;
   }
 
   .inquiry-form {
@@ -311,9 +374,6 @@
 .response-note {
   @apply mt-12 flex items-center gap-4 border-t border-white/15 pt-6;
 }
-.response-note span {
-  @apply grid size-9 place-items-center rounded-full bg-white font-mono text-[10px] font-bold text-black;
-}
 .response-note p {
   @apply text-xs leading-5 text-white/45;
 }
@@ -332,6 +392,9 @@
   .editorial-title span:nth-child(2),
   .editorial-title span:nth-child(3) {
     margin-left: 0;
+  }
+  .hero-scribble {
+    display: none;
   }
 }
 
