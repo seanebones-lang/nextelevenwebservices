@@ -5,6 +5,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Controller, useForm } from 'react-hook-form';
 import {
   ArrowRight,
+  ArrowLeft,
   CheckCircle2,
   LoaderCircle,
   RotateCcw,
@@ -38,6 +39,7 @@ const options = {
     ['full-vertical', 'A full vertical custom build'],
     ['commerce', 'A custom product-selling environment'],
     ['virtual-assistant', 'A virtual assistant or intelligent workflow'],
+    ['operate', 'Operate, hosting, or ongoing care'],
     ['not-sure', 'I need help choosing the right depth'],
   ],
   currentPresence: [
@@ -89,6 +91,12 @@ const defaults: InquiryInput = {
   companyWebsite: '',
 };
 
+const stepFields: Array<Array<keyof InquiryInput>> = [
+  ['projectType', 'currentPresence', 'primaryGoal'],
+  ['industry', 'timeline', 'budget', 'details'],
+  ['name', 'businessName', 'email', 'website'],
+];
+
 type SelectName =
   | 'industry'
   | 'projectType'
@@ -98,6 +106,7 @@ type SelectName =
   | 'budget';
 
 export function InquiryForm() {
+  const [step, setStep] = useState(0);
   const [result, setResult] = useState<{
     reference: string;
     replyBy?: string;
@@ -109,11 +118,28 @@ export function InquiryForm() {
     register,
     handleSubmit,
     reset,
+    trigger,
+    getFieldState,
+    setFocus,
     formState: { errors, isSubmitting },
   } = useForm<InquiryInput>({
     resolver: zodResolver(inquirySchema),
     defaultValues: defaults,
   });
+
+  async function advance() {
+    const valid = await trigger(stepFields[step], { shouldFocus: true });
+    if (valid) {
+      setServerError('');
+      setStep((current) => Math.min(current + 1, stepFields.length - 1));
+      return;
+    }
+
+    const firstInvalid = stepFields[step].find(
+      (fieldName) => getFieldState(fieldName).invalid,
+    );
+    if (firstInvalid) setFocus(firstInvalid);
+  }
 
   async function submit(values: InquiryInput) {
     setServerError('');
@@ -171,6 +197,7 @@ export function InquiryForm() {
           render={({ field }) => (
             <Select value={field.value} onValueChange={field.onChange}>
               <SelectTrigger
+                ref={field.ref}
                 id={name}
                 className="form-control w-full"
                 aria-invalid={Boolean(errors[name])}
@@ -224,8 +251,11 @@ export function InquiryForm() {
         )}
         <Button
           variant="outline"
-          onClick={() => setResult(null)}
-          className="mt-4 h-11 w-fit rounded-full border-white/25 bg-transparent px-5 text-white hover:bg-white/10 hover:text-white"
+          onClick={() => {
+            setStep(0);
+            setResult(null);
+          }}
+          className="reset-brief"
         >
           <RotateCcw /> Send another inquiry
         </Button>
@@ -234,7 +264,18 @@ export function InquiryForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit(submit)} className="inquiry-form" noValidate>
+    <form
+      onSubmit={
+        step === stepFields.length - 1
+          ? handleSubmit(submit)
+          : (event) => {
+              event.preventDefault();
+              void advance();
+            }
+      }
+      className="inquiry-form"
+      noValidate
+    >
       <input
         {...register('companyWebsite')}
         className="hidden"
@@ -243,128 +284,173 @@ export function InquiryForm() {
         aria-hidden="true"
       />
 
-      <div className="form-step">
-        <span>01</span>
-        <p>About you</p>
-      </div>
-      <div className="form-grid">
-        <Field data-invalid={Boolean(errors.name)}>
-          <FieldLabel htmlFor="name">Your name</FieldLabel>
-          <Input
-            id="name"
-            autoComplete="name"
-            placeholder="Jane Smith"
-            className="form-control"
-            aria-invalid={Boolean(errors.name)}
-            {...register('name')}
-          />
-          <FieldError>{errors.name?.message}</FieldError>
-        </Field>
-        <Field data-invalid={Boolean(errors.email)}>
-          <FieldLabel htmlFor="email">Work email</FieldLabel>
-          <Input
-            id="email"
-            type="email"
-            autoComplete="email"
-            placeholder="jane@business.com"
-            className="form-control"
-            aria-invalid={Boolean(errors.email)}
-            {...register('email')}
-          />
-          <FieldError>{errors.email?.message}</FieldError>
-        </Field>
-        <Field data-invalid={Boolean(errors.businessName)}>
-          <FieldLabel htmlFor="businessName">Business name</FieldLabel>
-          <Input
-            id="businessName"
-            autoComplete="organization"
-            placeholder="Your business"
-            className="form-control"
-            aria-invalid={Boolean(errors.businessName)}
-            {...register('businessName')}
-          />
-          <FieldError>{errors.businessName?.message}</FieldError>
-        </Field>
-        <Field>
-          <FieldLabel htmlFor="website">
-            Current website{' '}
-            <span className="font-normal text-white/40">Optional</span>
-          </FieldLabel>
-          <Input
-            id="website"
-            inputMode="url"
-            placeholder="yourbusiness.com"
-            className="form-control"
-            {...register('website')}
-          />
-        </Field>
-        {renderSelect('industry', 'Industry', 'Choose the closest fit')}
+      <div
+        className="brief-progress"
+        aria-label={`Project brief step ${step + 1} of 3`}
+      >
+        <div>
+          <span>{String(step + 1).padStart(2, '0')} / 03</span>
+          <strong>
+            {step === 0 && 'The project'}
+            {step === 1 && 'The reality'}
+            {step === 2 && 'Where to reply'}
+          </strong>
+        </div>
+        <div className="brief-progress-rail" aria-hidden="true">
+          <i style={{ width: `${((step + 1) / 3) * 100}%` }} />
+        </div>
       </div>
 
-      <div className="form-step">
-        <span>02</span>
-        <p>What needs to change</p>
-      </div>
-      <div className="form-grid">
-        {renderSelect(
-          'projectType',
-          'What kind of engagement?',
-          'Choose the closest fit',
+      <div key={step} className="brief-step-panel">
+        {step === 0 && (
+          <>
+            <div className="form-step">
+              <span>01</span>
+              <p>Choose the closest answer. We will refine it together.</p>
+            </div>
+            <div className="form-grid">
+              {renderSelect(
+                'projectType',
+                'What kind of engagement?',
+                'Choose the closest fit',
+              )}
+              {renderSelect(
+                'currentPresence',
+                'What exists today?',
+                'Choose the current state',
+              )}
+              {renderSelect(
+                'primaryGoal',
+                'What matters most?',
+                'Choose the primary goal',
+              )}
+            </div>
+          </>
         )}
-        {renderSelect(
-          'currentPresence',
-          'What exists today?',
-          'Choose the current state',
-        )}
-        {renderSelect(
-          'primaryGoal',
-          'What matters most?',
-          'Choose the primary goal',
-        )}
-        {renderSelect('timeline', 'Expected timing', 'Choose a timeline')}
-        {renderSelect('budget', 'Expected investment', 'Choose a range')}
-      </div>
 
-      <div className="form-step">
-        <span>03</span>
-        <p>The useful context</p>
+        {step === 1 && (
+          <>
+            <div className="form-step">
+              <span>02</span>
+              <p>
+                Give us the constraints that shape the right recommendation.
+              </p>
+            </div>
+            <div className="form-grid">
+              {renderSelect('industry', 'Industry', 'Choose the closest fit')}
+              {renderSelect('timeline', 'Expected timing', 'Choose a timeline')}
+              {renderSelect('budget', 'Expected investment', 'Choose a range')}
+            </div>
+            <Field
+              className="brief-context"
+              data-invalid={Boolean(errors.details)}
+            >
+              <FieldLabel htmlFor="details">
+                What should we understand before we talk?
+              </FieldLabel>
+              <Textarea
+                id="details"
+                rows={5}
+                placeholder="What is working, what is not, and what would a successful result change for the business?"
+                className="form-control min-h-36 resize-y py-4"
+                aria-invalid={Boolean(errors.details)}
+                {...register('details')}
+              />
+              <FieldError>{errors.details?.message}</FieldError>
+            </Field>
+          </>
+        )}
+
+        {step === 2 && (
+          <>
+            <div className="form-step">
+              <span>03</span>
+              <p>Tell us where to send the useful written response.</p>
+            </div>
+            <div className="form-grid">
+              <Field data-invalid={Boolean(errors.name)}>
+                <FieldLabel htmlFor="name">Your name</FieldLabel>
+                <Input
+                  id="name"
+                  autoComplete="name"
+                  placeholder="Jane Smith"
+                  className="form-control"
+                  aria-invalid={Boolean(errors.name)}
+                  {...register('name')}
+                />
+                <FieldError>{errors.name?.message}</FieldError>
+              </Field>
+              <Field data-invalid={Boolean(errors.businessName)}>
+                <FieldLabel htmlFor="businessName">Business name</FieldLabel>
+                <Input
+                  id="businessName"
+                  autoComplete="organization"
+                  placeholder="Your business"
+                  className="form-control"
+                  aria-invalid={Boolean(errors.businessName)}
+                  {...register('businessName')}
+                />
+                <FieldError>{errors.businessName?.message}</FieldError>
+              </Field>
+              <Field data-invalid={Boolean(errors.email)}>
+                <FieldLabel htmlFor="email">Work email</FieldLabel>
+                <Input
+                  id="email"
+                  type="email"
+                  autoComplete="email"
+                  placeholder="jane@business.com"
+                  className="form-control"
+                  aria-invalid={Boolean(errors.email)}
+                  {...register('email')}
+                />
+                <FieldError>{errors.email?.message}</FieldError>
+              </Field>
+              <Field>
+                <FieldLabel htmlFor="website">
+                  Current website{' '}
+                  <span className="font-normal text-white/40">Optional</span>
+                </FieldLabel>
+                <Input
+                  id="website"
+                  inputMode="url"
+                  placeholder="yourbusiness.com"
+                  className="form-control"
+                  {...register('website')}
+                />
+              </Field>
+            </div>
+          </>
+        )}
       </div>
-      <Field data-invalid={Boolean(errors.details)}>
-        <FieldLabel htmlFor="details">
-          What should we understand before we talk?
-        </FieldLabel>
-        <Textarea
-          id="details"
-          rows={5}
-          placeholder="What is working, what is not, and what would a successful result change for the business?"
-          className="form-control min-h-36 resize-y py-4"
-          aria-invalid={Boolean(errors.details)}
-          {...register('details')}
-        />
-        <FieldError>{errors.details?.message}</FieldError>
-      </Field>
 
       {serverError && (
-        <p
-          className="rounded-xl bg-white/10 p-4 text-sm text-white/70"
-          role="alert"
-        >
+        <p className="form-error" role="alert">
           {serverError}
         </p>
       )}
 
-      <div className="flex flex-col gap-4 border-t border-white/15 pt-6 sm:flex-row sm:items-center sm:justify-between">
-        <p className="max-w-sm text-xs leading-5 text-white/45">
-          Your answers are used only to evaluate and respond to this inquiry.
-        </p>
-        <Button
-          type="submit"
-          disabled={isSubmitting}
-          className="h-14 rounded-full bg-white px-7 text-base text-black hover:bg-white/80"
-        >
+      <div className="form-submit-row">
+        {step === 0 ? (
+          <p>
+            Your answers are used only to evaluate and respond to this inquiry.
+          </p>
+        ) : (
+          <button
+            type="button"
+            className="brief-back"
+            onClick={() => setStep((current) => Math.max(0, current - 1))}
+          >
+            <ArrowLeft aria-hidden="true" /> Back
+          </button>
+        )}
+        <Button type="submit" disabled={isSubmitting} className="brief-submit">
           {isSubmitting ? (
             <>
               <LoaderCircle className="animate-spin" /> Saving inquiry
+            </>
+          ) : step < stepFields.length - 1 ? (
+            <>
+              Continue <ArrowRight />
             </>
           ) : (
             <>

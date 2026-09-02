@@ -13,9 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    'https://nexteleven-web-presence.nexteleven.chatgpt.site',
-  ),
+  metadataBase: new URL('https://nexteleven-web-presence.vercel.app'),
   title: 'NextEleven — We Build Presence That Works',
   description:
     'NextEleven discovers, designs, and engineers premium web foundations and full vertical custom environments for established businesses.',
@@ -23,10 +21,10 @@ export const metadata: Metadata = {
     title: 'We build presence that works.',
     description: 'Strategy through operation. One accountable partner.',
     type: 'website',
-    url: 'https://nexteleven-web-presence.nexteleven.chatgpt.site',
+    url: 'https://nexteleven-web-presence.vercel.app',
     images: [
       {
-        url: '/og.png',
+        url: '/og-v2.png',
         width: 1200,
         height: 630,
         alt: 'We build presence that works. Strategy through operation. One accountable partner.',
@@ -37,7 +35,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'We build presence that works.',
     description: 'Strategy through operation. One accountable partner.',
-    images: ['/og.png'],
+    images: ['/og-v2.png'],
   },
 };
 

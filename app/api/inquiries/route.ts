@@ -17,7 +17,10 @@ async function inquiryRuntime(): Promise<InquiryRuntime> {
     };
   }
 
-  const workerRuntime = await import('cloudflare:workers');
+  // Keep the Cloudflare-only module out of Vercel's webpack graph. The
+  // non-literal specifier is resolved only in the Workers runtime.
+  const workerRuntimeSpecifier = 'cloudflare:workers';
+  const workerRuntime = await import(workerRuntimeSpecifier);
   return workerRuntime.env;
 }
 
@@ -61,11 +64,17 @@ async function isRateLimited(db: D1Database, request: Request, now: number) {
       .run();
   }
 
-  return (result?.request_count ?? RATE_LIMIT_MAX_REQUESTS + 1) >
-    RATE_LIMIT_MAX_REQUESTS;
+  return (
+    (result?.request_count ?? RATE_LIMIT_MAX_REQUESTS + 1) >
+    RATE_LIMIT_MAX_REQUESTS
+  );
 }
 
-function notificationBody(id: string, createdAt: string, inquiry: InquiryInput) {
+function notificationBody(
+  id: string,
+  createdAt: string,
+  inquiry: InquiryInput,
+) {
   return JSON.stringify({
     event: 'inquiry.created',
     reference: id.slice(0, 8).toUpperCase(),
