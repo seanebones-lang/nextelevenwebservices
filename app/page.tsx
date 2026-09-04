@@ -388,6 +388,7 @@ export default function Home() {
               <a href="mailto:nextelevenstudios@gmail.com">
                 nextelevenstudios@gmail.com
               </a>
+              <a href="tel:+18339256048">833-925-6048</a>
             </div>
           </div>
 
@@ -420,9 +421,11 @@ export default function Home() {
             <div className="proof-policy">
               <strong>Proof should match the problem.</strong>
               <span>
-                Relevant client work is shared privately when permission and fit
-                allow. We do not substitute unrelated mobile-app credentials for
-                web-presence proof or publish a client result without consent.
+                JP Transmission Recycling is a complete modern web-presence
+                delivery: bilingual buyer and seller paths, responsive design,
+                a routed inquiry flow, and an Ask JP assistance experience.
+                Its solid foundation leaves inventory, e-commerce, and checkout
+                for a separately approved future phase.
               </span>
             </div>
           </div>
@@ -526,6 +529,7 @@ export default function Home() {
           <a href="mailto:nextelevenstudios@gmail.com">
             nextelevenstudios@gmail.com
           </a>
+          <a href="tel:+18339256048">833-925-6048</a>
           <a href="#top">Return to signal ↑</a>
         </div>
       </footer>
