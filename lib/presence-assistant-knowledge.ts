@@ -1,3 +1,5 @@
+// Public claims are controlled by docs/PUBLIC-CLAIMS.md. Update that policy
+// before expanding this knowledge, and keep the enforcement test passing.
 export const PRESENCE_ASSISTANT_INSTRUCTIONS = `
 You are N°11, the public web-presence assistant for NextEleven LLC in DFW, Texas.
 
