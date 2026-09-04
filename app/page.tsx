@@ -60,24 +60,25 @@ export default function Home() {
       <section id="top" className="signal-hero">
         <div className="hero-copy">
           <div className="hero-meta hero-reveal-1">
-            <span>Premium web systems studio</span>
+            <span>Custom web-presence studio</span>
             <span>Conceive / Create / Build / Operate</span>
           </div>
 
           <h1
             className="signal-title"
-            aria-label="We build presence that works."
+            aria-label="Web presence built around the business behind it."
           >
-            <span className="hero-reveal-2">We build</span>
-            <span className="title-spectrum hero-reveal-3">presence</span>
-            <span className="hero-reveal-4">that works.</span>
+            <span className="hero-reveal-2">Web presence</span>
+            <span className="title-spectrum hero-reveal-3">built around</span>
+            <span className="hero-reveal-4">the business.</span>
           </h1>
 
           <div className="hero-bottom hero-reveal-5">
             <p>
-              NextEleven designs and engineers premium custom web
-              environments—from a solid public foundation to full vertical
-              systems that sell, assist, integrate, and operate.
+              NextEleven defines, designs, and engineers custom web
+              environments—from a focused public foundation to connected
+              commerce, assistance, integration, and operating workflows when
+              those capabilities are justified and included in the scope.
             </p>
             <div className="hero-actions">
               <a className="primary-action" href="#contact" data-magnetic>
@@ -85,14 +86,14 @@ export default function Home() {
                 <ArrowUpRight aria-hidden="true" />
               </a>
               <a className="text-action" href="#engagements">
-                See the numbers
+                Compare engagement depths
                 <ArrowDownRight aria-hidden="true" />
               </a>
             </div>
             <div className="hero-proofline">
-              <span>Discovery from $500</span>
+              <span>Clear starting points before the brief</span>
               <i aria-hidden="true" />
-              <span>Written reply within two business days</span>
+              <span>Direct response from the owner</span>
             </div>
           </div>
         </div>
@@ -112,7 +113,7 @@ export default function Home() {
             </div>
             <div className="visual-stage visual-stage-c">
               <i />
-              <span>Full vertical</span>
+              <span>Connected build</span>
             </div>
             <div className="visual-stage visual-stage-d">
               <i />
@@ -149,19 +150,19 @@ export default function Home() {
         <div className="section-shell rate-intro" data-reveal>
           <SectionSignal index="01" label="Choose the depth" />
           <h2>
-            Real numbers.
+            Clear starting points.
             <br />
             Before the form.
           </h2>
           <div className="rate-premise">
             <p>
               Start with what the business actually needs. Discover the
-              opportunity. Establish the foundation. Build the full vertical
-              when it earns the right to exist.
+              opportunity. Establish the foundation. Add connected capabilities
+              only when the operating need justifies it.
             </p>
             <small>
-              These are honest starting points. Discovery confirms the final
-              scope before build work begins.
+              These descriptions establish the decision path. The signed
+              proposal confirms scope, fees, schedule, and responsibilities.
             </small>
           </div>
         </div>
@@ -195,8 +196,8 @@ export default function Home() {
         <div className="section-shell system-heading" data-reveal>
           <SectionSignal index="02" label="The build system" />
           <h2>
-            Cutting edge.
-            <span>Built on bedrock.</span>
+            Modern capability.
+            <span>Sound foundations.</span>
           </h2>
           <p>
             Advanced capability only creates value when the fundamentals are
@@ -228,11 +229,11 @@ export default function Home() {
           <div className="launch-standard-new">
             <span>Foundation launch standard</span>
             <p>
-              Before launch: domain and DNS are prepared, redirects are mapped
-              when relevant, forms are tested, analytics is live, mobile and
-              accessibility checks are completed, and the approved production
-              route is verified. Foundation and Full Vertical builds include 30
-              days of post-launch defect support.
+              Before launch, the team prepares the approved domain and DNS path,
+              maps relevant redirects, tests included forms, configures included
+              analytics and consent behavior, completes the agreed mobile and
+              accessibility checks, and verifies the production route. Any
+              post-launch defect-support period is stated in the proposal.
             </p>
           </div>
         </div>
@@ -248,7 +249,7 @@ export default function Home() {
           </h2>
           <p>
             The operating model is designed to protect both sides: visible
-            checkpoints, client-controlled accounts, and no artificial lock-in.
+            checkpoints, client-controlled accounts, and written ownership terms.
           </p>
         </div>
 
@@ -256,15 +257,14 @@ export default function Home() {
           <article className="payment-system" data-reveal>
             <div className="system-card-label">
               <span>Payment route</span>
-              <small>Standard build schedule</small>
+              <small>Schedule stated in the signed proposal</small>
             </div>
             <div
               className="payment-route"
-              aria-label="30 percent deposit, 40 percent milestone, 30 percent completion"
+              aria-label="Project payment follows the schedule stated in the signed proposal"
             >
               <div>
-                <strong>30</strong>
-                <sup>%</sup>
+                <strong>01</strong>
                 <span>Deposit</span>
                 <small>Reserve + begin</small>
               </div>
@@ -272,8 +272,7 @@ export default function Home() {
                 <span />
               </i>
               <div>
-                <strong>40</strong>
-                <sup>%</sup>
+                <strong>02</strong>
                 <span>Milestone</span>
                 <small>Agreed checkpoint</small>
               </div>
@@ -281,8 +280,7 @@ export default function Home() {
                 <span />
               </i>
               <div>
-                <strong>30</strong>
-                <sup>%</sup>
+                <strong>03</strong>
                 <span>Completion</span>
                 <small>Final acceptance</small>
               </div>
@@ -292,11 +290,11 @@ export default function Home() {
           <article className="ownership-system" data-reveal>
             <div className="system-card-label">
               <span>Ownership route</span>
-              <small>After final payment</small>
+              <small>Defined in the signed proposal</small>
             </div>
             <div
               className="ownership-map"
-              aria-label="Client-owned project assets"
+              aria-label="Project asset ownership is defined in the signed proposal"
             >
               <div className="asset-nodes">
                 {[
@@ -321,17 +319,16 @@ export default function Home() {
               <div className="client-owned">
                 <small>Final destination</small>
                 <strong>
-                  CLIENT
+                  TERMS
                   <br />
-                  OWNED
+                  DEFINED
                 </strong>
               </div>
             </div>
             <p>
-              Pay the hosting provider directly or have NextEleven manage it.
-              Either way, the source and accounts can move to another suitable
-              provider at any time. Provider charges stay separate and
-              pre-approved.
+              Client-owned accounts remain under client control. Source
+              portability depends on the selected platform, provider terms,
+              licenses, and written scope. Provider charges remain separate.
             </p>
           </article>
 
@@ -345,10 +342,10 @@ export default function Home() {
             <div>
               <p className="system-label">Optional continuity</p>
               <h3>Operate</h3>
-              <strong>From $150/month</strong>
+              <strong>Quoted after responsibilities are defined</strong>
               <p>
-                After the included 30-day launch window, a standard retainer can
-                cover managed releases, uptime and form monitoring, routine
+                An operating agreement can cover selected managed releases,
+                form and availability monitoring, routine
                 dependency updates, small content changes, and a monthly health
                 check. Higher-touch support, workflow operation, or continuous
                 improvement is scoped around the actual system.
@@ -384,7 +381,7 @@ export default function Home() {
             </p>
             <div className="principal-response">
               <span>Response protocol</span>
-              <strong>Written reply within two business days.</strong>
+              <strong>We aim to reply within two business days after confirmed receipt.</strong>
               <a href="mailto:nextelevenstudios@gmail.com">
                 nextelevenstudios@gmail.com
               </a>
@@ -405,7 +402,7 @@ export default function Home() {
               {[
                 'A business problem worth solving',
                 'One decision-maker at checkpoints',
-                'A custom result—not a template reskin',
+                'Acceptance conditions both sides can verify',
               ].map((item) => (
                 <span key={item}>
                   <Check aria-hidden="true" />
@@ -414,18 +411,19 @@ export default function Home() {
               ))}
             </div>
             <p className="fit-exclusion">
-              We are not the right shop for a template reskin, a standalone $300
-              logo, or a request to “just make it pretty” without addressing the
-              business problem.
+              NextEleven is best suited to engagements where positioning,
+              customer journeys, implementation, and measurable acceptance
+              conditions matter. Logo-only and template-only work is outside
+              the standard scope.
             </p>
             <div className="proof-policy">
               <strong>Proof should match the problem.</strong>
               <span>
-                JP Transmission Recycling is a complete modern web-presence
-                delivery: bilingual buyer and seller paths, responsive design,
-                a routed inquiry flow, and an Ask JP assistance experience.
-                Its solid foundation leaves inventory, e-commerce, and checkout
-                for a separately approved future phase.
+                NextEleven designed and implemented JP Transmission’s bilingual
+                web presence with distinct buyer and seller journeys,
+                responsive layouts, a configured inquiry path, and browser-based
+                Ask JP guidance using approved site information. Inventory,
+                ecommerce, and checkout remain separately scoped future work.
               </span>
             </div>
           </div>
@@ -450,7 +448,7 @@ export default function Home() {
           <div className="contact-intro-new" data-reveal>
             <SectionSignal index="06" label="Route the brief" />
             <p className="contact-overline">
-              No gatekeeping. No mystery pricing.
+              A focused brief. A written next step.
             </p>
             <h2>
               Tell us what
@@ -458,23 +456,22 @@ export default function Home() {
               needs to work.
             </h2>
             <p>
-              The numbers are already above. This focused brief gives us enough
-              context to respond intelligently—not another hoop between you and
-              a price.
+              This focused brief gives NextEleven enough context to evaluate
+              fit, identify missing facts, and recommend a concrete next step.
             </p>
             <div className="response-beacon">
               <span>
                 <i />
               </span>
               <p>
-                <strong>Intake channel open</strong>
-                Written response within two business days.
+                <strong>Project brief available</strong>
+                We aim to reply within two business days after confirmed receipt.
               </p>
             </div>
           </div>
           <div className="brief-console" data-reveal>
             <div className="console-header">
-              <span>PROJECT BRIEF / SECURE INTAKE</span>
+              <span>PROJECT BRIEF</span>
               <div aria-hidden="true">
                 <i />
                 <i />
@@ -517,7 +514,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="footer-signal" aria-hidden="true">
           <ElevenMark />
-          <span>SYSTEM COMPLETE</span>
+          <span>NEXTELEVEN / WEB PRESENCE</span>
         </div>
         <p className="footer-statement">
           Conceive clearly. Create deliberately.

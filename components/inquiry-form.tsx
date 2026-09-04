@@ -35,8 +35,8 @@ const options = {
   ],
   projectType: [
     ['discovery', 'Discovery and strategic definition'],
-    ['foundation', 'A premium web foundation'],
-    ['full-vertical', 'A full vertical custom build'],
+    ['foundation', 'A custom web foundation'],
+    ['full-vertical', 'A connected custom build'],
     ['commerce', 'A custom product-selling environment'],
     ['virtual-assistant', 'A virtual assistant or intelligent workflow'],
     ['operate', 'Operate, hosting, or ongoing care'],
@@ -232,7 +232,7 @@ export function InquiryForm() {
         <h3>
           {result.deliveryPending
             ? 'Your brief is saved.'
-            : 'Thank you. We have a useful place to begin.'}
+            : 'Your project brief was accepted by the site.'}
         </h3>
         {result.deliveryPending ? (
           <p>
@@ -245,8 +245,9 @@ export function InquiryForm() {
           </p>
         ) : (
           <p>
-            We’ll review the business, the existing presence, and what you want
-            to change. You’ll receive a written reply by {result.replyBy}.
+            Keep the reference shown above until receipt is confirmed.
+            NextEleven aims to send a written reply by {result.replyBy} after
+            confirmed receipt.
           </p>
         )}
         <Button
@@ -432,7 +433,10 @@ export function InquiryForm() {
       <div className="form-submit-row">
         {step === 0 ? (
           <p>
-            Your answers are used only to evaluate and respond to this inquiry.
+            Your answers are used to evaluate and respond to this inquiry. Do
+            not include passwords, API keys, payment-card information,
+            financial-account credentials, protected health information,
+            government identification, or other sensitive records.
           </p>
         ) : (
           <button

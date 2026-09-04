@@ -47,7 +47,7 @@ export const services: ServiceStage[] = [
     statement: 'Engineer it to be fast, useful, and durable.',
     detail:
       'Custom commerce, virtual assistants, inventory-aware experiences, integrations, responsive engineering, analytics, and launch preparation.',
-    signal: 'Environment online',
+    signal: 'Launch path prepared',
   },
   {
     number: '04',
@@ -73,21 +73,21 @@ export const engagements: Engagement[] = [
       'Architecture',
       'Build recommendation',
     ],
-    investment: 'From $500',
-    timing: '5–10 business days after kickoff',
+    investment: 'Price confirmed in writing',
+    timing: 'Set after kickoff inputs and access are confirmed',
     deliverable:
-      'A written scope memo with audience and journey findings, recommended sitemap, technical requirements, build recommendation, and an estimate for Foundation or Full Vertical.',
+      'A written scope memo with audience and journey findings, recommended sitemap, technical requirements, build recommendation, and an estimate for a Foundation or Connected Build.',
     clientInputs:
       'Your current site, relevant competitors, available brand assets, business priorities, and the person who handles customer inquiries.',
     boundaries:
-      'This is paid decision-making work—not a free sales call and not a finished website. The Discovery fee is credited to a Foundation or Full Vertical build started within 30 days.',
+      'This is paid planning work, not a finished website. Any credit toward a later build is stated in the written proposal.',
   },
   {
     id: 'foundation',
     number: 'B',
     name: 'Solid Foundation',
     description:
-      'Create the premium digital foundation the business can confidently grow from—distinctive, fast, maintainable, and built around its real customer journey.',
+      'Create a distinctive, fast, maintainable public foundation built around the business’s real customer journey.',
     includes: [
       'Strategy',
       'Messaging',
@@ -96,21 +96,21 @@ export const engagements: Engagement[] = [
       'Analytics',
       'Launch',
     ],
-    investment: 'From $2,500 · typically $2,500–$7,500',
-    timing: 'Usually 3–6 weeks from cleared deposit to launch',
+    investment: 'Price confirmed after scope',
+    timing: 'Set after scope, access, content, and approvals are known',
     deliverable:
-      'A custom, responsive presence of approximately 5–12 core pages with strategy, information architecture, a design system, edited or newly written copy as scoped, mobile QA, analytics, basic technical SEO, and a tested inquiry path.',
+      'A custom responsive website with the pages, strategy, information architecture, design system, copy support, mobile review, accessibility review, technical SEO, analytics, and inquiry-path testing expressly included in the proposal.',
     clientInputs:
       'Timely access to brand materials, factual business information, existing accounts, and one decision-maker for checkpoint approvals.',
     boundaries:
-      'Two consolidated design/content revision rounds are included. A simple editor may be included when useful; otherwise NextEleven handles changes. Custom commerce, inventory sync, virtual assistants, and multi-location operations are scoped as Full Vertical work.',
+      'The proposal states the included review rounds, editing model, integrations, and launch responsibilities. Commerce, inventory synchronization, assistants, and multi-location workflows are separate modules unless expressly included.',
   },
   {
     id: 'vertical',
     number: 'C',
-    name: 'Full Vertical Build',
+    name: 'Connected Build',
     description:
-      'Build the complete custom environment around the business—from public presence and product sales to intelligent assistance and private operating workflows.',
+      'Connect the public presence to the specific commerce, inventory, assistance, communication, or internal-workflow modules the operation requires.',
     includes: [
       'Commerce',
       'Inventory',
@@ -119,37 +119,37 @@ export const engagements: Engagement[] = [
       'Human handoff',
       'Automation',
     ],
-    investment: 'Custom scope · from $7,500',
+    investment: 'Quoted after discovery',
     timing: 'Discovery or a paid scoping week comes first',
     deliverable:
-      'A purpose-built operating environment assembled from the modules the business actually needs. For example: a shop site, product catalog, booking flow, after-hours assistant, inventory connection, and inbox routing with human handoff.',
+      'A purpose-built environment assembled from the modules the business actually needs—for example, a public site, product catalog, booking flow, inventory connection, guided assistant, client portal, or inquiry-routing workflow.',
     clientInputs:
       'Access to the systems being connected, operating rules, product or service data, escalation owners, and a decision-maker empowered to approve workflows.',
     boundaries:
-      'Commerce, inventory, assistants, email routing, human handoff, and automation are common modules—not assumed inclusions. Scope, integrations, acceptance criteria, runtime, and calendar are defined in writing before the build begins.',
+      'No module is assumed. Integrations, data handling, security responsibilities, runtime, calendar, acceptance, and operating ownership are defined in writing before implementation begins.',
   },
 ];
 
 export const terms: CommercialTerm[] = [
   {
     title: 'Payment and start',
-    body: 'NextEleven invoices by card or ACH. The project calendar begins when the deposit clears and required kickoff material is available. Applicable taxes, if any, are itemized rather than hidden in the fee.',
+    body: 'The signed proposal states the accepted payment method, deposit, milestone schedule, and conditions for starting work. The project calendar begins after the required payment and kickoff materials are received.',
   },
   {
     title: 'Scope changes',
-    body: 'Work outside the accepted scope is described and priced in a written change order before it begins. No surprise work and no surprise invoice.',
+    body: 'Work outside the accepted scope begins only after a written change order describing the impact on deliverables, fees, and schedule is approved.',
   },
   {
     title: 'If a project stops',
-    body: 'The deposit reserves capacity and covers work begun. If the client cancels, completed work and committed third-party costs are reconciled through the stop date; no unperformed milestone is silently charged.',
+    body: 'Fees at cancellation are determined under the signed agreement, based on completed work, reserved capacity, and approved third-party commitments.',
   },
   {
     title: 'Files and accounts',
-    body: 'After final payment, the client owns the project source code and final project-specific design files. The client owns the domain, analytics, email, commerce, and cloud accounts; NextEleven receives only the access needed to do the work.',
+    body: 'The signed proposal identifies the deliverables that transfer after final payment. Pre-existing tools, open-source software, fonts, stock assets, hosted services, and other third-party materials remain subject to their existing licenses and terms.',
   },
   {
     title: 'Hosting and portability',
-    body: 'The client may pay providers directly or ask NextEleven to manage them. Provider charges remain separate and pre-approved. The source and client-owned accounts can move to another suitable provider at any time.',
+    body: 'The client may pay providers directly or authorize NextEleven to manage specified services. Provider charges remain separate. Portability depends on the selected platform, provider terms, licenses, and written scope.',
   },
   {
     title: 'DFW and remote work',

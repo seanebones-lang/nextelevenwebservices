@@ -72,7 +72,7 @@ export function ExperienceRuntime() {
       tabIndex={showMobileAction ? 0 : -1}
     >
       <span>
-        Discovery <small>from $500</small>
+        Discovery <small>price confirmed in writing</small>
       </span>
       <strong>
         Start a project <ArrowUpRight aria-hidden="true" />

@@ -73,7 +73,7 @@ const welcomeMessage: ConversationMessage = {
   id: 'welcome',
   role: 'assistant',
   content:
-    'I’m N°11, the web-presence guide. I can compare build depths, explain pricing and ownership, explore connected capabilities, or route you to a human.',
+    'I’m the NextEleven Web Presence guide. I can compare engagement depths, explain the published commercial boundaries, explore connected capabilities, or direct you to the project brief.',
   createdAt: '',
   source: 'system',
 };

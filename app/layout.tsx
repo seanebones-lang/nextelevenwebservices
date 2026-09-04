@@ -14,12 +14,12 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://nexteleven-web-presence.vercel.app'),
-  title: 'NextEleven — We Build Presence That Works',
+  title: 'NextEleven Web Presence | Custom Websites and Connected Business Systems',
   description:
-    'NextEleven discovers, designs, and engineers premium web foundations and full vertical custom environments for established businesses.',
+    'NextEleven designs and builds custom web presences, inquiry paths, portals, commerce foundations, and connected workflows for DFW and remote clients.',
   openGraph: {
-    title: 'We build presence that works.',
-    description: 'Strategy through operation. One accountable partner.',
+    title: 'Web presence built around the business behind it.',
+    description: 'Custom websites and connected business systems from an owner-operated DFW studio.',
     type: 'website',
     url: 'https://nexteleven-web-presence.vercel.app',
     images: [
@@ -27,14 +27,14 @@ export const metadata: Metadata = {
         url: '/og-v2.png',
         width: 1200,
         height: 630,
-        alt: 'We build presence that works. Strategy through operation. One accountable partner.',
+        alt: 'NextEleven Web Presence — custom websites and connected business systems.',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'We build presence that works.',
-    description: 'Strategy through operation. One accountable partner.',
+    title: 'Web presence built around the business behind it.',
+    description: 'Custom websites and connected business systems from an owner-operated DFW studio.',
     images: ['/og-v2.png'],
   },
 };
